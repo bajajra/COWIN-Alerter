@@ -1,6 +1,6 @@
 import requests
 import datetime
-todays_date = datetime.datetime.now().strftime("%d/%m/%Y")
+todays_date = datetime.datetime.now().strftime("%d-%m-%Y")
 print(todays_date)
 # import beepy
 # import sched, time
