@@ -5,11 +5,11 @@ name: Alerter Build
 # Controls when the action will run. 
 on:
   schedule:
-    - cron: '*/5 * * * *'
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    - cron: '*/10 * * * *'
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
