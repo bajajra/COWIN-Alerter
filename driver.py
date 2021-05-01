@@ -1,8 +1,11 @@
 import requests
+import datetime
+todays_date = datetime.datetime.now().strftime("%d/%m/%Y")
+print(todays_date)
 # import beepy
 # import sched, time
 # s = sched.scheduler(time.time, time.sleep)
-URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=110058&date=01-05-2021"
+URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=110058&date=" + str(todays_date)
 # URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=143&date=01-05-2021"
 # def do_something(sc):
 #     print("called")
@@ -28,7 +31,7 @@ URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPi
 
 
 r=requests.get(url=URL)
-print(r)
+#print(r)
 data = r.json()
 for centre in data["centers"]:
     for session in centre["sessions"]:
