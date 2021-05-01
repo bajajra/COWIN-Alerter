@@ -1,7 +1,8 @@
 import requests
 import datetime
-todays_date = datetime.datetime.now().strftime("%d-%m-%Y")
-print(todays_date)
+from dateutil.tz import gettz
+todays_date = datetime.datetime.now(tz=gettz('Asia/Kolkata')).strftime("%d-%m-%Y")
+print("Status for Date: ", todays_date)
 # import beepy
 # import sched, time
 # s = sched.scheduler(time.time, time.sleep)
