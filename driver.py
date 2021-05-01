@@ -2,7 +2,7 @@ import requests
 import datetime
 from dateutil.tz import gettz
 todays_date = datetime.datetime.now(tz=gettz('Asia/Kolkata')).strftime("%d-%m-%Y")
-print("Status for Date: ", todays_date)
+#print("Status for Date: ", todays_date)
 # import beepy
 # import sched, time
 # s = sched.scheduler(time.time, time.sleep)
@@ -36,7 +36,7 @@ r=requests.get(url=URL)
 data = r.json()
 for centre in data["centers"]:
     for session in centre["sessions"]:
-        if session["min_age_limit"] == 45:
+        if session["min_age_limit"] == 18:
             print(centre["name"], session['date'])
 
 
