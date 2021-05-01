@@ -37,6 +37,6 @@ data = r.json()
 for centre in data["centers"]:
     for session in centre["sessions"]:
         if session["min_age_limit"] == 45:
-            print(centre["name"])
+            print(centre["name"], session['date'])
 
 
