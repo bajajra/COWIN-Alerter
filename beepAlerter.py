@@ -12,11 +12,12 @@ URL1 = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByD
     todays_date)
 # URL2 = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=143&date=03-05-2021"
 URL3 = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + str(pin_code) + "&date=" + str(todays_date)
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
 
 def do_something(sc):
     print("requested")
-    r = requests.get(url=URL3)
+    r = requests.get(url = URL3, headers = headers)
     data = r.json()
 
     for centre in data["centers"]:
